@@ -1,43 +1,47 @@
-[![Dependency Status](https://david-dm.org/raulg/reactjs-blog.svg)](https://david-dm.org/raulg/reactjs-blog)
+# Prismic GraphQL Pagination & Preview Example
+This project is an implementation of the Prismic blog site demo using ReactJS with GraphQL. It includes fully working Preview functionality as well as four different examples of working with the GraphQL Pagination system.
 
-# Prismic React Blog Site Example
-This project is an implementation of the Prismic blog site demo using ReactJS. Built up from the starter project, it's meant to provide you with an idea of how to build your own sites using the Prismic features. Read our [user guide](https://user-guides.prismic.io/examples/react-js-samples/sample-blog-with-api-based-cms-in-reactjs) if you need guidance on how to use this repository.
+## Pagination examples
+The 4 implementations using the GraphQL pagination demonstrated in this project are:
+- Recursively querying all documents of a type (more than the 20 item limit)
+- An infinite loader button
+- Next & Previous results buttons
+- A full pagination example
 
-## Getting started quickly with Prismic Themes
-You can use our [Prismic-CLI](https://github.com/prismicio/prismic-cli) tool to quickly install this project in your machine, as well as setting up a Prismic repository with the required Custom Types. Just follow the instructions in your terminal to get started!
-
-```
-npm install -g prismic-cli
-prismic theme https://github.com/raulg/reactjs-blog --conf /src/prismic-configuration.js
-```
+## Getting started
+Here is how to get this example project up and running.
 
 ### Install dependencies
+After downloading the project files. Open your terminal to the root of the project and run the following command.
+
 ```
 npm install
 ```
-### Runs the app in the development mode
-Build and open your browser to http://localhost:3000.
+
+### Run the app in the dev mode
+Run the following command and open your browser to http://localhost:3000 to view the project in development mode.
+
 ```
 npm start
 ```
 
-### Builds the app for production to the build folder
+### Build the app for production
+Run the following command to generate the `build` folder to use for your production deployment.
+
 ```
 npm run build
 ```
 
 ## Deployment
-This project is ready for deployment using [Netlify](https://www.netlify.com), thanks to the addition of a `_redirects` file located in the public folder. If you're interested in deploying to other platforms review the suggested [solutions](https://facebook.github.io/create-react-app/docs/deployment).
+This project is ready for deployment using [Netlify](https://www.netlify.com). If you're interested in deploying to other platforms review the suggested [solutions](https://facebook.github.io/create-react-app/docs/deployment).
 
 ## Get started with Prismic
-
 You can find out how to get started with Prismic from [our React documentation](https://prismic.io/docs/reactjs/getting-started/getting-started-from-scratch).
 
 ## Licence
-
 This software is licensed under the Apache 2 license, quoted below.
 
-Copyright 2017 Prismic.io (https://prismic.io).
+Copyright 2020 Prismic (https://prismic.io).
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this project except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
 

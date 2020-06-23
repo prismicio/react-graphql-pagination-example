@@ -25,7 +25,6 @@ export const queryHomeContent = async () => {
   });
 };
 
-
 /*
  * Blog post list queries
  */
@@ -123,7 +122,6 @@ export const recursivelyFetchAllPosts = async (currentCursor = null) => {
 
   return [...currentPosts, ...newPosts];
 };
-
 
 /*
  * Blog Post query

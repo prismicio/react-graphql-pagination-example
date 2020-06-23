@@ -5,22 +5,21 @@ import Prismic from 'prismic-javascript';
 import { Loader } from '../components';
 import { repoName, linkResolver } from '../prismic-configuration';
 
-const previewApi = Prismic.client(`https://${repoName}.cdn.prismic.io/api/v2`);
+const previewClient = Prismic.client(`https://${repoName}.cdn.prismic.io/api/v2`);
 
 /**
  * Prismic preview component
  */
 const Preview = ({ history, location }) => {
   useEffect(() => {
-    const params = qs.parse(location.search.slice(1));
-    if (!params.token) {
-      console.warn(`Unable to retrieve the session token from provided url. \n
-      Check https://prismic.io/docs/rest-api/beyond-the-api/the-preview-feature for more info`);
+    const { token, documentId } = qs.parse(location.search.slice(1));
+    if (!token) {
+      console.warn('No preview token available, check your configuration');
     }
 
     // Retrieve the correct URL for the document being previewed.
     // Once fetched, redirect to the given url
-    previewApi.previewSession(params.token, linkResolver, '/')
+    previewClient.getPreviewResolver(token, documentId).resolve(linkResolver, '/')
       .then((url) => history.push(url));
   });
 

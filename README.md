@@ -1,6 +1,8 @@
 # Prismic GraphQL Pagination & Preview Example
 This project is an implementation of the Prismic blog site demo using ReactJS with GraphQL. It includes fully working Preview functionality as well as four different examples of working with the GraphQL Pagination system.
 
+Check out the live demo of this project [here](https://prismic-graphql-pagination.netlify.app/all-posts).
+
 ## Pagination examples
 The 4 implementations using the GraphQL pagination demonstrated in this project are:
 - Recursively querying all documents of a type (more than the 20 item limit)

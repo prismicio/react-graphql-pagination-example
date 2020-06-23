@@ -19,7 +19,8 @@ const Preview = ({ history, location }) => {
 
     // Retrieve the correct URL for the document being previewed.
     // Once fetched, redirect to the given url
-    previewClient.getPreviewResolver(token, documentId).resolve(linkResolver, '/')
+    previewClient.getPreviewResolver(token, documentId)
+      .resolve(linkResolver, '/')
       .then((url) => history.push(url));
   });
 

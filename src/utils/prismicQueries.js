@@ -20,9 +20,21 @@ query blogHomeQuery {
 `;
 
 export const queryHomeContent = async () => {
-  return client.query({
+  const previewCookie = Cookies.get('io.prismic.preview');
+
+  const queryOptions = {
     query: blogHomeQuery,
-  });
+  };
+
+  if (previewCookie) {
+    queryOptions.context = {
+      headers: {
+        'Prismic-ref': previewCookie,
+      },
+    };
+  }
+
+  return client.query(queryOptions);
 };
 
 /*

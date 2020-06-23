@@ -21,10 +21,10 @@ const PreviousNextPagination = ({ itemsPerPage }) => {
 
   const setNewCursors = (newPosts) => {
     const firstNewPost = newPosts.edges[0];
-    setStartCursor(firstNewPost.cursor);
+    setStartCursor(firstNewPost ? firstNewPost.cursor : null);
 
     const lastNewPost = newPosts.edges[newPosts.edges.length - 1];
-    setEndCursor(lastNewPost.cursor);
+    setEndCursor(lastNewPost ? lastNewPost.cursor : null);
   };
 
   const renderPosts = useCallback((newPosts) => {

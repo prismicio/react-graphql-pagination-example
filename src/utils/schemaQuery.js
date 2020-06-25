@@ -2,13 +2,15 @@
 const fetch = require('node-fetch');
 const fs = require('fs');
 
-fetch('https://sample-blog-v2.prismic.io/api')
+const repoId = 'prismic-pagination-demo';
+
+fetch(`https://${repoId}.cdn.prismic.io/api`)
   .then((r) => r.json())
   .then((data) => {
     const ref = data.refs.find((r) => r.id === 'master');
     if (!ref) return;
     fetch(
-      'https://sample-blog-v2.prismic.io/graphql?query=%7B%20__schema%20%7B%20types%20%7B%20kind%20name%20possibleTypes%20%7B%20name%20%7D%20%7D%20%7D%20%7D',
+      `https://${repoId}.cdn.prismic.io/graphql?query=%7B%20__schema%20%7B%20types%20%7B%20kind%20name%20possibleTypes%20%7B%20name%20%7D%20%7D%20%7D%20%7D`,
       {
         headers: {
           'prismic-ref': ref.ref,
